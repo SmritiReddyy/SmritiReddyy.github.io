@@ -6,6 +6,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # README edits don't change the site, so they don't redeploy it.
+    paths-ignore:
+      - '*.md'
   workflow_dispatch:
 
 permissions:
