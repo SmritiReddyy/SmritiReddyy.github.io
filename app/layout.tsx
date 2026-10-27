@@ -23,7 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Before first paint: apply the saved theme, and hide the greeting on
+            repeat visits this session. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var d=document.documentElement;if(localStorage.getItem('theme')==='light')d.dataset.theme='light';if(sessionStorage.getItem('greeting-seen')==='1')d.classList.add('greeting-seen')}catch(e){}`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
