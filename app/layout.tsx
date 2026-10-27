@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Smriti's Portfolio",
+  title: "Smriti Reddy Uravakonda · Portfolio",
   description: "Portfolio of Smriti Reddy Uravakonda",
 };
 
